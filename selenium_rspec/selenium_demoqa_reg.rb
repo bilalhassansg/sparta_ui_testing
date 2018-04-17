@@ -30,7 +30,7 @@ class SeleniumDemoReg
 
   def access_registration_form
     @chrome_driver.get(PAGE_URL)
-    sleep 5
+    # sleep 5
   end
 
   def current_url
@@ -229,7 +229,3 @@ class SeleniumDemoReg
     @chrome_driver.find_element(:class, REGISTRATION_CONFIRMATION).text
   end
 end
-
-reg = SeleniumDemoReg.new
-
-reg.access_registration_form
