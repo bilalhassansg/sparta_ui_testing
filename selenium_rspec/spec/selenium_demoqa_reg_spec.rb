@@ -10,6 +10,8 @@ describe 'Testing the demoqa registration page' do
     @username = @fake_u.generate_username
     @fake_e = GenDataio.new.genData_email_services
     @email = @fake_e.generate_email
+    @fake_n = GenDataio.new.generate_first_name_services
+    @first_name = @fake_n.generate_first_name
   end
 
   context 'Positive paths for the registration form and register' do
@@ -20,8 +22,8 @@ describe 'Testing the demoqa registration page' do
 
     it 'should accept a first name' do
       @driver.first_name_field_displayed
-      @driver.set_first_name_field('Bilal')
-      expect(@driver.get_first_name_field_value).to eq 'Bilal'
+      @driver.set_first_name_field(@first_name)
+      expect(@driver.get_first_name_field_value).to eq @first_name
     end
 
     it 'should accpet a last name' do
