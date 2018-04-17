@@ -19,7 +19,7 @@ class SeleniumQaToolsForm
 
   def input_first_name_field text # insert the first name
     @chrome_driver.find_element(:name, FIRST_NAME_FIELD_NAME).send_keys(text)
-    sleep 4
+    # sleep 4
   end
 
   def get_first_name_text # get the first name that has been inserted
@@ -28,7 +28,7 @@ class SeleniumQaToolsForm
 
   def input_last_name_field text # insert the last name
     @chrome_driver.find_element(:name, LAST_NAME_FIELD_NAME).send_keys(text)
-    sleep 4
+    # sleep 4
   end
 
   def get_last_name_text # get the name that has been inserted
@@ -37,7 +37,7 @@ class SeleniumQaToolsForm
 
   def input_gender# insert the last name
     @chrome_driver.find_element(:id, 'sex-0').click
-    sleep 4
+    # sleep 2
   end
 
   def get_gender # get the name that has been inserted
@@ -46,7 +46,7 @@ class SeleniumQaToolsForm
 
   def input_years_of_experience # input the number of years of experience
     @chrome_driver.find_element(:id, 'exp-6').click
-    sleep 4
+    # sleep 2
   end
 
   def get_years_of_experience # get the number of years experience
@@ -55,7 +55,7 @@ class SeleniumQaToolsForm
 
   def input_date d # insert the first name
     @chrome_driver.find_element(:id, DATEPICKER).send_keys(d)
-    sleep 4
+    # sleep 2
   end
 
   def get_date # get the first name that has been inserted
@@ -64,7 +64,7 @@ class SeleniumQaToolsForm
 
   def input_profession # insert the last name
     @chrome_driver.find_element(:id, 'profession-1').click
-    sleep 4
+    sleep 2
   end
 
   def get_profession # get the name that has been inserted
@@ -73,9 +73,8 @@ class SeleniumQaToolsForm
 
   def input_photo
     @chrome_driver = driver.find_element(:id, 'photo').click
-    sleep 5
+    # sleep 5
   end
-
 
 end
 
