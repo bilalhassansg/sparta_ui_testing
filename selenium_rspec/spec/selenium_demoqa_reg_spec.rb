@@ -6,6 +6,10 @@ describe 'Testing the demoqa registration page' do
     @driver = SeleniumDemoReg.new
     @driver.access_registration_form
     @wait = Selenium::WebDriver::Wait.new(timeout: 10)
+    @fake_u = GenDataio.new.genData_un_services
+    @username = @fake_u.generate_username
+    @fake_e = GenDataio.new.genData_email_services
+    @email = @fake_e.generate_email
   end
 
   context 'Positive paths for the registration form and register' do
@@ -60,13 +64,13 @@ describe 'Testing the demoqa registration page' do
     end
 
     it 'should accept a username' do
-      @driver.set_user_name_field('username5username')
-      expect(@driver.get_user_name_field_value).to eq 'username5username'
+      @driver.set_user_name_field(@username)
+      expect(@driver.get_user_name_field_value).to eq @username
     end
 
     it 'should accept a email' do
-      @driver.set_email_field('username5username@test.com')
-      expect(@driver.get_email_field_value).to eq 'username5username@test.com'
+      @driver.set_email_field(@email)
+      expect(@driver.get_email_field_value).to eq @email
     end
 
     it 'should accept a about yourself text' do

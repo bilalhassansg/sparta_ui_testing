@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
 require_relative'../selenium_demoqa_reg'
+require_relative '../lib/genData'
 
 RSpec.configure do |config|
   config.color = true
